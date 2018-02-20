@@ -26,7 +26,7 @@ public class ProjectDeductiveDatabase {
 		while(i < answerSet.size()) {
 			factResult = answerSet.get(i);
 			lista = factResult.attributes();
-            if(lista.size() == 0)
+            if(lista.size() == 0)       //predicado sin atributos (como iAmHungry)
                 predicate = factResult.toString();
             else {
                 tokenizer = new StringTokenizer(factResult.toString(), "(");
@@ -94,13 +94,41 @@ public class ProjectDeductiveDatabase {
 
         datos = getDatos(answerSet);
 
-        dato = datos.get(12);
+        /*
+        dato = datos.get(8);
         System.out.println(dato.getPredicate());
         i = 0;
         while( i < dato.getArity()) {
             System.out.println(dato.getArgument(i));
             i = i + 1;
         }//end while
+        */
+
+        //Lista de los nobodyLikesHim
+        int him = 0;
+        while(him < datos.size()){
+            String elDato = datos.get(him).getPredicate();
+            if(elDato.equals("nobodyLikesHim")){
+                System.out.println("Pobrecito " + datos.get(him).getArgument(0));
+            }
+            him = him + 1;
+        }
+
+        for(Dato elDato:datos){
+            if(elDato.getPredicate().equals("dateProposal")){
+                System.out.println();
+                System.out.print("Proponemos una cita de ");
+                System.out.print(elDato.getArgument(0));
+                System.out.print(" con ");
+                System.out.print(elDato.getArgument(1));
+
+                System.out.println();
+                System.out.print("Proponemos una cita de ");
+                System.out.print("Tony");
+                System.out.print(" con ");
+                System.out.print("Alina");
+            }
+        }
 
 
 	}//end main
