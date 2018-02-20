@@ -193,6 +193,12 @@ public class DeductiveDatabase
 	}//end removeNegationFact
 
 
+
+	////////////////////////////////////////////
+
+
+
+
     public void show()
     {
         FactResult factResult;

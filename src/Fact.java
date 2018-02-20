@@ -174,17 +174,6 @@ public class Fact implements Comparable
 
 
 
-	public void addFactArgument(Fact anArgument)
-	{
-		String theArgument;
-
-		theArgument = anArgument.toString();
-		theArgument = theArgument.substring(0,theArgument.length()-1);
-		arguments.add(theArgument);
-		arity = arity + 1;
-	}//end addArgument
-
-
 	public int compareTo(Object anObject)
 	{
 		Fact otherFact;
