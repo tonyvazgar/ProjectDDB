@@ -114,6 +114,7 @@ public class ProjectDeductiveDatabase {
             him = him + 1;
         }
 
+        //Lista de los que quieren una cita
         for(Dato elDato:datos){
             if(elDato.getPredicate().equals("dateProposal")){
                 System.out.println();
@@ -129,8 +130,6 @@ public class ProjectDeductiveDatabase {
                 System.out.print("Alina");
             }
         }
-
-
 	}//end main
 
 }//end ProjectDeductiveDatabase
